@@ -1,0 +1,19 @@
+<%= form_tag(@user) do %>
+  <%= label_tag :email %>
+  <%= text_field_tag 'user[email]' %>
+  <%= label_tag :password %>
+  <%= text_field_tag 'user[password]' %>
+  <%= label_tag :password_confirmation, 'Confirm Password' %>
+  <%= text_field_tag 'user[password_confirmation]' %>
+  <%= label_tag :first_name %>
+  <%= text_field_tag 'user[first_name]' %>
+  <%= label_tag :last_name %>
+  <%= text_field_tag 'user[last_name]' %>
+  <%= label_tag :street_address %>
+  <%= text_field_tag 'user[street_address]' %>
+  <%= label_tag :city %>
+  <%= text_field_tag 'user[city]' %>
+  <%= label_tag :zip_code %>
+  <%= text_field_tag 'user[zip_code]' %>
+  <%= submit_tag 'Create Account' %>
+<% end %>

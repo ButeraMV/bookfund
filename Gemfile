@@ -16,11 +16,15 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'faraday'
 gem 'travis'
+gem 'brakeman'
+gem 'factory_bot_rails'
+gem 'database_cleaner'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
