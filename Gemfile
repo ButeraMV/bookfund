@@ -18,6 +18,8 @@ gem 'faraday'
 gem 'travis'
 gem 'brakeman'
 gem 'database_cleaner'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
