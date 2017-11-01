@@ -17,7 +17,6 @@ gem 'figaro'
 gem 'faraday'
 gem 'travis'
 gem 'brakeman'
-gem 'factory_bot_rails'
 gem 'database_cleaner'
 
 group :development, :test do
