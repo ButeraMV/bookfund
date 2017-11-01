@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe 'A user' do
+describe 'A user' do
   it 'can login and out of an existing account' do
     user = User.create(email: "email@email.com",
                       password: "password",
@@ -13,10 +13,10 @@ xdescribe 'A user' do
     user.roles << role
 
     visit '/'
-    click_on 'Login'
+    click_on 'Login', match: :first
     fill_in 'user[email]', with: "#{user.email}"
     fill_in 'user[password]', with: "#{user.password}"
-    click_on 'Login'
+    click_on 'Login to my account'
 
     expect(current_path).to eq('/dashboard')
     expect(page).to have_content('Welcome back, John')
@@ -25,6 +25,7 @@ xdescribe 'A user' do
     click_on 'Logout'
 
     expect(current_path).to eq('/')
-    expect(session[:user_id]).to eq(nil)
+    expect(page).to have_content("Login")
+		expect(page).to_not have_content("Logout")
   end
 end
