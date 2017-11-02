@@ -18,7 +18,6 @@ gem 'faraday'
 gem 'travis'
 gem 'brakeman'
 gem 'database_cleaner'
-gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 
 group :development, :test do
@@ -29,6 +28,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'newrelic_rpm', '4.0.0.332'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
