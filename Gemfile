@@ -19,6 +19,8 @@ gem 'travis'
 gem 'brakeman'
 gem 'database_cleaner'
 gem 'jquery-rails'
+gem 'will_paginate'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
