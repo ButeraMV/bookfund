@@ -4,7 +4,7 @@ class CreateEbooks < ActiveRecord::Migration[5.1]
       t.string :title
       t.text :description
       t.text :body
-      t.boolean :published
+      t.boolean :published, default: false
 
       t.timestamps
     end
