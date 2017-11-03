@@ -5,7 +5,6 @@ describe "A user" do
     ebook = Ebook.create(title: 'Ebook',
                 description: 'Book about things',
                 body: 'Body text',
-                published: false,
                 price: 2.00)
 
     visit ebooks_path

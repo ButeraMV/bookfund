@@ -4,7 +4,9 @@ class Order < ApplicationRecord
   has_many :order_ebooks
   has_many :ebooks, through: :order_ebooks
 
-  validates :user_id, :total_price, :status, presence: true
+  validates :user_id, presence: true
+  validates :total_price, presence: true
+  validates :status, presence: true
 
   enum status: [:ordered, :paid, :cancelled, :completed]
 
