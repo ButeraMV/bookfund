@@ -14,7 +14,6 @@ describe "User can checkout" do
     ebook = Ebook.create(title: 'Ebook',
                          description: 'Book about things',
                          body: 'Body text',
-                         published: false,
                          price: 2.00)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)

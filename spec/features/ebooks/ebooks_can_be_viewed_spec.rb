@@ -3,10 +3,11 @@ require 'rails_helper'
 describe 'Ebooks can be viewed' do
   it 'in an index' do
     ebook_collection = 25.times do
-      Ebook.create(title: 'Ebook',
+      Ebook.create!(title: 'Ebook',
                    description: 'Book about things',
                    body: 'Body text',
-                   published: false)
+                  #  published: false,
+                   price: 2.00)
     end
 
     visit ebooks_path
