@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103000322) do
+ActiveRecord::Schema.define(version: 20171103035206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,33 @@ ActiveRecord::Schema.define(version: 20171103000322) do
     t.float "price"
   end
 
+  create_table "order_ebooks", force: :cascade do |t|
+    t.bigint "ebook_id"
+    t.bigint "order_id"
+    t.integer "quantity"
+    t.decimal "line_item_total"
+    t.index ["ebook_id"], name: "index_order_ebooks_on_ebook_id"
+    t.index ["order_id"], name: "index_order_ebooks_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.decimal "total_price"
+    t.integer "status", default: 0
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_ebooks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "ebook_id"
+    t.index ["ebook_id"], name: "index_user_ebooks_on_ebook_id"
+    t.index ["user_id"], name: "index_user_ebooks_on_user_id"
   end
 
   create_table "user_roles", force: :cascade do |t|
@@ -50,6 +73,11 @@ ActiveRecord::Schema.define(version: 20171103000322) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "order_ebooks", "ebooks"
+  add_foreign_key "order_ebooks", "orders"
+  add_foreign_key "orders", "users"
+  add_foreign_key "user_ebooks", "ebooks"
+  add_foreign_key "user_ebooks", "users"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
 end
