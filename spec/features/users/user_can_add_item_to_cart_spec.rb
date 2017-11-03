@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe "A user" do
   it "can add items to their cart" do
-    ebook = Ebook.create(title: 'Ebook',
+    category = Category.create(name: 'Fantasy')
+    ebook = category.ebooks.create(title: 'Ebook',
                 description: 'Book about things',
                 body: 'Body text',
                 price: 2.00)

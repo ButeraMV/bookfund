@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :user_ebooks
   has_many :ebooks, through: :user_ebooks
+  has_many :authors
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true

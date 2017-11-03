@@ -2,12 +2,13 @@ require 'rails_helper'
 
 describe 'Ebooks can be viewed' do
   it 'in an index' do
+    category = Category.create(name: 'Fantasy')
+    author = Author.new(name: 'Author')
     ebook_collection = 25.times do
-      Ebook.create!(title: 'Ebook',
-                   description: 'Book about things',
-                   body: 'Body text',
-                  #  published: false,
-                   price: 2.00)
+      ebook = category.ebooks.create!(title: 'Ebook',
+                                      description: 'Book about things',
+                                      body: 'Body text',
+                                      price: 2.00)
     end
 
     visit ebooks_path
