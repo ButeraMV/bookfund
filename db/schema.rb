@@ -10,16 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103035206) do
+ActiveRecord::Schema.define(version: 20171103050914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ebook_categories", force: :cascade do |t|
+    t.bigint "ebook_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_ebook_categories_on_category_id"
+    t.index ["ebook_id"], name: "index_ebook_categories_on_ebook_id"
+  end
 
   create_table "ebooks", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.text "body"
-    t.boolean "published", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "price"
@@ -73,6 +85,8 @@ ActiveRecord::Schema.define(version: 20171103035206) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "ebook_categories", "categories"
+  add_foreign_key "ebook_categories", "ebooks"
   add_foreign_key "order_ebooks", "ebooks"
   add_foreign_key "order_ebooks", "orders"
   add_foreign_key "orders", "users"
