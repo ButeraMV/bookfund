@@ -8,6 +8,7 @@
     <div class="description">
       <%= ebook.description %>
     </div>
+    <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id) %>
   </div>
 <% end %>
 
