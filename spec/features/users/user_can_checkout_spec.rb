@@ -11,7 +11,8 @@ describe "User can checkout" do
                       zip_code: "80201")
     role = Role.new(name: "registered_user")
     user.roles << role
-    ebook = Ebook.create(title: 'Ebook',
+    category = Category.create(name: 'Fantasy')
+    ebook = category.ebooks.create(title: 'Ebook',
                          description: 'Book about things',
                          body: 'Body text',
                          price: 2.00)
