@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/dashboard', to: 'users#show', as: 'dashboard'
   resource :cart
-  resources :users, only: [:new, :create]
   resources :ebooks, only: [:index]
+  resources :orders, only: [:index, :show, :create, :new]
+  resources :users, only: [:new, :create]
 end

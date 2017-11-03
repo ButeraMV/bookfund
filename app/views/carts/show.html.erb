@@ -6,3 +6,9 @@
     <p><%= number_to_currency(ebook.price) %></p>
   </div>
 <% end %>
+
+<% if current_user %>
+  <%= button_to "Checkout", new_order_path(current_user), method: :get %>
+<% else %>
+  <p class="text-right"><%= link_to "Login or Register to checkout", login_path %></p><br />
+<% end %>

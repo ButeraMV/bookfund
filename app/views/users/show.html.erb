@@ -1,1 +1,8 @@
 <h2>Welcome back, <%= @user.first_name %></h2>
+
+<h4>Your eBooks</h4>
+<% @ebooks.each do |ebook| %>
+  <div class="ebook">
+    <%= ebook.title %>
+  </div>
+<% end %>

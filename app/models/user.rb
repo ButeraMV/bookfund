@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_secure_password
   has_many :user_roles
   has_many :roles, through: :user_roles
+  has_many :orders
+  has_many :user_ebooks
+  has_many :ebooks, through: :user_ebooks
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
