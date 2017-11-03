@@ -16,13 +16,11 @@
 
 html {
   font-family: 'Roboto', sans-serif;
-  background-image: url(/assets/book.png);
-  background-repeat:no-repeat;
-  background-size:cover;
+  background-color: ghostwhite;
 }
 
 .welcome-message {
-  background-color: rgb(255, 53, 0)
+  background-color: white;
 }
 
 .welcome-message > h1 {

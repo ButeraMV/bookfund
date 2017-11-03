@@ -1,0 +1,8 @@
+<h1>Your Cart</h1>
+
+<% @ebooks.each do |ebook| %>
+  <div class="cart-item">
+    <p><%= ebook.title %></p>
+    <p><%= number_to_currency(ebook.price) %></p>
+  </div>
+<% end %>
