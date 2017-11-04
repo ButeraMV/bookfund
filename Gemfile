@@ -22,7 +22,7 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'faker'
 gem 'shoulda-matchers', '~> 3.1'
-gem 'simplecov', :require => false, :group => :test
+gem 'simplecov'
 gem "factory_bot_rails", "~> 4.0"
 
 group :development, :test do
