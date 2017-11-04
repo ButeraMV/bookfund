@@ -6,9 +6,8 @@ env:
 script:
 - bundle exec rspec
 - bundle exec brakeman --exit-on-warn --quiet -f plain
-before_install:
-  - gem update bundler
 before_script:
+- gem update bundler
 - bundle exec rake db:create
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
