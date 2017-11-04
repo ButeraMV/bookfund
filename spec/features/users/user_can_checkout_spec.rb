@@ -2,20 +2,8 @@ require 'rails_helper'
 
 describe "User can checkout" do
   it "from the cart path" do
-    user = User.create(email: "email@email.com",
-                      password: "password",
-                      first_name: "John",
-                      last_name: "Doe",
-                      street_address: "123 Some Place",
-                      city: "Denver",
-                      zip_code: "80201")
-    role = Role.new(name: "registered_user")
-    user.roles << role
-    category = Category.create(name: 'Fantasy')
-    ebook = category.ebooks.create(title: 'Ebook',
-                         description: 'Book about things',
-                         body: 'Body text',
-                         price: 2.00)
+    user = create(:user)
+    ebook = create(:ebook)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

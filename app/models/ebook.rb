@@ -11,5 +11,5 @@ class Ebook < ApplicationRecord
   has_many :users, through: :ebooks
   has_many :ebook_categories
   has_many :categories, through: :ebook_categories
-  belongs_to :author, optional: true
+  belongs_to :author
 end
