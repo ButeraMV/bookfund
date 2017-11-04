@@ -8,4 +8,5 @@ describe User do
   it { is_expected.to validate_presence_of(:street_address) }
   it { is_expected.to validate_presence_of(:city) }
   it { is_expected.to validate_presence_of(:zip_code) }
+  it { is_expected.to validate_presence_of(:role) }
 end

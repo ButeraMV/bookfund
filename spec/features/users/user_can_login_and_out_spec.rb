@@ -8,9 +8,8 @@ describe 'A user' do
                       last_name: "Doe",
                       street_address: "123 Some Place",
                       city: "Denver",
-                      zip_code: "80201")
-    role = Role.new(name: "registered_user")
-    user.roles << role
+                      zip_code: "80201",
+                      role: 0)
 
     visit '/'
     click_on 'Login', match: :first
