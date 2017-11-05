@@ -5,8 +5,8 @@
   <div class="nav-two">
     <nav class="nav-flex">
       <ul>
-        <li><a href="#home flex-item">Books</a></li>
-        <li><a href="#news flex-item">Categories</a></li>
+        <li><%= link_to 'eBooks', ebooks_path, class: 'flex-item' %></li>
+        <li><%= link_to 'Categories', categories_path, class: 'flex-item' %></li>
         <li><a href="#about flex-item">About us</a></li>
         <% if current_user %>
           <li><%= link_to 'My Account', dashboard_path, class: 'flex-item' %></li>
