@@ -1,0 +1,14 @@
+<h1><%= @category.name %> eBooks</h1>
+
+<% @category.ebooks.each do |ebook| %>
+  <div class="ebook">
+    <h4><%= ebook.title %></h4>
+    <p>
+      <%= ebook.description %>
+    </p>
+    <p>
+      <%= ebook.price %>
+    </p>
+    <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id) %>
+  </div>
+<% end %>
