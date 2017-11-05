@@ -4,6 +4,7 @@
   <div class="cart-item">
     <p><%= ebook.title %></p>
     <p><%= number_to_currency(ebook.price) %></p>
+    <p><%= button_to "Remove", cart_path(ebook), method: :delete %></p>
   </div>
 <% end %>
 

@@ -12,4 +12,12 @@ class CartsController < ApplicationController
     @cart = Cart.new(session[:cart])
     @ebooks = Ebook.find(@cart.contents.keys)
   end
+
+  def destroy
+    ebook = Ebook.find(params[:format])
+    @cart.contents.delete(params[:format])
+    flash[:success] = "Removed <a href=#{ebook_path(ebook)}>#{ebook.title}</a> from your cart."
+
+    redirect_to cart_path
+  end
 end
