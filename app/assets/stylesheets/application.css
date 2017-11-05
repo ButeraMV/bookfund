@@ -31,3 +31,9 @@ html {
 .welcome-message > h1 {
   font-family: 'Slabo 27px', serif;
 }
+
+.success {
+  background-color: #0A0;
+  text-align: center;
+}
+

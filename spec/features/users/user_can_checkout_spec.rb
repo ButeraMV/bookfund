@@ -10,6 +10,9 @@ describe "User can checkout" do
     visit ebooks_path
 
     click_on "Add to Cart"
+
+    expect(page).to have_content "#{ebook.title} added to cart"
+
     click_on "Cart"
 
     expect(current_path).to eq(cart_path)
