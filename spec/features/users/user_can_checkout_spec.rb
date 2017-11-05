@@ -25,22 +25,17 @@ describe "User can checkout" do
     expect(page).to_not have_content(ebook.title)
   end
 
-  # scenario "visitor cannot checkout" do
-  #
-  #
-  #   visit items_path
-  #
-  #   within(".item-#{item_1.id}") do
-  #     find(:css, ".add-to-cart").click
-  #   end
-  #
-  #   within(".item-#{item_2.id}") do
-  #     find(:css, ".add-to-cart").click
-  #   end
-  #
-  #   find(:css, ".cart").click
-  #
-  #   expect(page).to have_content("Login or Register to checkout")
-  #   expect(page).to_not have_content("Checkout")
-  # end
+  scenario "visitor cannot checkout" do
+    ebook = create(:ebook)
+
+    visit ebooks_path
+
+    click_on "Add to Cart"
+    click_on "Cart"
+
+    expect(current_path).to eq(cart_path)
+    expect(page).to have_content(ebook.title)
+    expect(page).to have_content("Login or Register to checkout")
+    expect(page).to_not have_content("Checkout")
+  end
 end

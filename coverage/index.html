@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-04T19:46:54-06:00">2017-11-04T19:46:54-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-04T20:30:15-06:00">2017-11-04T20:30:15-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.38
+         1.5
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>5.9</td>
+        <td>6.9</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>1.9</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -77,7 +77,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>3.0</td>
+        <td>4.0</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>19</td>
         <td>19</td>
         <td>0</td>
-        <td>2.6</td>
+        <td>2.9</td>
       </tr>
       
       <tr>
@@ -416,8 +416,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="7">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="23" data-linenumber="7">
+          <span class="hits">23</span>
           
           <code class="ruby">    @user = User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -440,8 +440,8 @@
           <code class="ruby">  def set_cart</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="11">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="26" data-linenumber="11">
+          <span class="hits">26</span>
           
           <code class="ruby">    @cart ||= Cart.new(session[:cart])</code>
         </li>
@@ -489,32 +489,32 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="3">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="3">
+          <span class="hits">3</span>
           
           <code class="ruby">    id = params[:ebook_id].to_s</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">    movie = Ebook.find_by(id: id)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">    session[:cart] ||= {}</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    session[:cart][id] = (session[:cart][id] || 0) + 1</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
           
           <code class="ruby">    redirect_to ebooks_path</code>
         </li>
@@ -537,14 +537,14 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="11">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="11">
+          <span class="hits">4</span>
           
           <code class="ruby">    @cart = Cart.new(session[:cart])</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="12">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="12">
+          <span class="hits">4</span>
           
           <code class="ruby">    @ebooks = Ebook.find(@cart.contents.keys)</code>
         </li>
@@ -592,14 +592,14 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="3">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="3">
+          <span class="hits">7</span>
           
           <code class="ruby">    @ebooks = Ebook.paginate(:page =&gt; params[:page], :per_page =&gt; 20)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="4">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="4">
+          <span class="hits">7</span>
           
           <code class="ruby">    @cart = Cart.new(session[:cart])</code>
         </li>
@@ -1350,8 +1350,8 @@
           <code class="ruby">  def initialize(initial_contents)</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="5">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="38" data-linenumber="5">
+          <span class="hits">38</span>
           
           <code class="ruby">    @contents = initial_contents || {}</code>
         </li>
