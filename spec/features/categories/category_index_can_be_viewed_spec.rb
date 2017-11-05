@@ -23,6 +23,6 @@ describe "Category web pages" do
     click_on 'Fantasy'
 
     expect(current_path).to eq("/categories/#{category.id}")
-    expect(page).to have_css('.ebook', count: 5)
+    expect(page).to have_css('.category-ebook', count: 5)
   end
 end

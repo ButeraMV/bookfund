@@ -1,0 +1,10 @@
+<h1 class="ebook-show-title"><%= @ebook.title %></h1>
+<h3 class="ebook-show-author"><%= @ebook.author.name %></h3>
+
+<p class="ebook-show-description">
+  <%= @ebook.description %>
+</p>
+<p class="ebook-show-price">
+  <%= @ebook.price %>
+</p>
+<%= button_to "Add to Cart", cart_path(ebook_id: @ebook.id) %>

@@ -8,7 +8,7 @@ describe 'Ebooks can be viewed' do
 
     visit ebooks_path
 
-    expect(page).to have_css(".ebook", count: 20)
+    expect(page).to have_css(".ebook-index-item", count: 20)
     expect(page).to have_css(".title", count: 20)
     expect(page).to have_css(".description", count: 20)
   end
