@@ -2,6 +2,17 @@
   <h2>Title: <%= @ebook.title %></h2>
   <p>Description: <%= @ebook.description %></p>
   <p>Price: <%= number_to_currency(@ebook.price) %></p>
-  <p>Categories: <%= @ebook.categories || "None yet" %></p>
-  <%= link_to 'Assign categories', users_authors_ebook_path(@ebook), method: 'edit' %>
+  <div class="ebook-categories">
+    <% if @category_names != "" %>
+      <p>Categories:</p>
+      <ul>
+        <% @category_names.each do |name| %>
+          <li><%= name %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>Categories: None yet</p>
+    <% end %>
+    <%= link_to 'Update categories', controller: "users/authors/ebooks", action: "edit" %>
+  </div>
 </div>

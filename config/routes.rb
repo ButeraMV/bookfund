@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   namespace :users do
     resources :authors, only: [:index, :create]
     namespace :authors do
-      resources :ebooks, only: [:show, :edit, :update]
+      resources :ebooks, only: [:new, :create, :show, :edit, :update]
     end
   end
 end

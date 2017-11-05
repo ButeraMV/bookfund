@@ -2,7 +2,7 @@
   <h3>Posting as <%= @author.name %></h3>
   <h5>Please double check everything as an eBook cannot be edited after release</h5>
 
-  <%= form_tag(@ebook) do %>
+  <%= form_tag(users_authors_ebooks_path) do %>
     <div class="form-group">
     <%= text_field_tag :title, 'Title', class: "form-control" %>
     </div>
