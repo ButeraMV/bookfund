@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'A visitor can create an account' do
   it 'with all fields present' do
     visit '/'
-    click_on 'Create Account'
+    click_on 'Sign Up'
     fill_in 'user[email]', with: 'user@user.com'
     fill_in 'user[password]', with: 'password'
     fill_in 'user[password_confirmation]', with: 'password'
@@ -20,7 +20,7 @@ describe 'A visitor can create an account' do
 
   it 'cannot create account missing information' do
     visit '/'
-    click_on 'Create Account'
+    click_on 'Sign Up'
     fill_in 'user[email]', with: 'user@user.com'
     fill_in 'user[password]', with: 'password'
     fill_in 'user[password_confirmation]', with: 'password'
