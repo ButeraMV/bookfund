@@ -1,17 +1,24 @@
 <div class="nav-wrapper">
-  <nav class="nav-flex">
-    <ul>
-      <li><a href="#home flex-item">Books</a></li>
-      <li><a href="#news flex-item">Categories</a></li>
-      <li><a href="#about flex-item">About us</a></li>
-      <% if current_user %>
-        <li><%= link_to 'My Account', dashboard_path, class: 'flex-item' %></li>
-        <li><%= link_to 'Logout', logout_path, class: 'flex-item' %></li>
-      <% else %>
-        <li><%= link_to 'Login', login_path, class: 'flex-item' %></li>
-        <li><%= link_to 'Create Account', new_user_path, class: 'flex-item' %></li>
-      <% end %>
-      <li><%= link_to 'Cart', cart_path, class: 'flex-item cart-button' %></li>
-    </ul>
-  </nav>
+  <div class="nav-one">
+    Bookfund
+  </div>
+  <div class="nav-two">
+    <nav class="nav-flex">
+      <ul>
+        <li><a href="#home flex-item">Books</a></li>
+        <li><a href="#news flex-item">Categories</a></li>
+        <li><a href="#about flex-item">About us</a></li>
+        <% if current_user %>
+          <li><%= link_to 'My Account', dashboard_path, class: 'flex-item' %></li>
+          <li><%= link_to 'Logout', logout_path, class: 'flex-item' %></li>
+        <% else %>
+          <li><%= link_to 'Login', login_path, class: 'flex-item' %></li>
+          <li><%= link_to 'Create Account', new_user_path, class: 'flex-item' %></li>
+        <% end %>
+        <li><%= link_to 'Cart', cart_path, class: 'flex-item cart-button' %></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="nav-three">
+  </div>
 </div>
