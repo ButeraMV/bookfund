@@ -6,7 +6,7 @@
   </tr>
   <% @orders.each do |order| %>
     <tr>
-      <td><%= link_to "Order ##{order.id}" %></td>
+      <td><%= order.id %></td>
       <td><%= number_to_currency(order.total_price) %></td>
       <td><%= order.status %></td>
     </tr>
