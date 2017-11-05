@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :create, :new]
   resources :users, only: [:new, :create]
   resources :categories, only: [:index, :show]
+  namespace :users do
+    resources :authors, only: [:index, :create]
+  end
 end
