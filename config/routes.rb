@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show', as: 'dashboard'
   resource :cart
   resources :ebooks, only: [:index, :show]
-  resources :orders, only: [:index, :show, :create, :new]
+  resources :orders, only: [:index, :create, :new]
   resources :users, only: [:new, :create]
   resources :categories, only: [:index, :show]
 end
