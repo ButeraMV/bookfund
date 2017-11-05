@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Your Authors</h1>
+
+  <%= form_tag(users_authors_path, class: "form-inline") do %>
+    <%= text_field_tag :name, 'Author name', class: "form-control mr-sm-2" %>
+    <%= submit_tag "Create new author", class: 'btn' %>
+  <% end %>
+  <ul class="author-list">
+    <% @authors.each do |author| %>
+      <li class="author-list-item"><%= author.name %> has <%= author.ebooks.count %> eBooks. <%= link_to 'Post an eBook.', new_ebook_path(author: author) %></li>
+    <% end %>
+  </ul>
+</div>

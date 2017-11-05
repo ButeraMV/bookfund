@@ -191,6 +191,12 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/mbutera/turing/3module/projects/bookfund/app/helpers/application_helper.rb": [
@@ -215,7 +221,7 @@
         1,
         null,
         1,
-        75,
+        86,
         null,
         null,
         1,
@@ -353,7 +359,7 @@
         null,
         null,
         1,
-        55,
+        66,
         null,
         null,
         1,
@@ -376,6 +382,26 @@
         null,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
         null,
         null
       ],
@@ -455,9 +481,9 @@
         null,
         null,
         1,
-        6,
-        5,
-        5,
+        8,
+        7,
+        7,
         null,
         1,
         null,
@@ -472,6 +498,33 @@
         null
       ],
       "/Users/mbutera/turing/3module/projects/bookfund/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/mbutera/turing/3module/projects/bookfund/app/controllers/users/authors_controller.rb": [
+        1,
+        1,
+        4,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/mbutera/turing/3module/projects/bookfund/app/controllers/users/authors/ebooks_controller.rb": [
+        1,
         1,
         1,
         null,
@@ -501,6 +554,6 @@
         null
       ]
     },
-    "timestamp": 1509908019
+    "timestamp": 1509918486
   }
 }

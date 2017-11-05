@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>Posting as <%= @author.name %></h3>
+  <h5>Please double check everything as an eBook cannot be edited after release</h5>
+
+  <%= form_tag(@ebook) do %>
+    <div class="form-group">
+    <%= text_field_tag :title, 'Title', class: "form-control" %>
+    </div>
+    <div class="form-group">
+    <%= text_area_tag :description, 'Description', class: "form-control" %>
+    </div>
+    <div class="form-group">
+    <%= text_area_tag :price, '2.00', class: "form-control" %>
+    </div>
+    <div class="form-group">
+    <%= text_area_tag :body, 'Body', class: "form-control" %>
+    </div>
+    <div class="form-group">
+    <%= submit_tag "Submit eBook", class: 'btn' %>
+    </div>
+    <%= hidden_field_tag 'author_id', @author.id %>
+  <% end %>
+</div>
