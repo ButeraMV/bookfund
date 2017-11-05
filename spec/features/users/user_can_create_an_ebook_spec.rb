@@ -25,10 +25,13 @@ describe 'As a user' do
     click_on 'Post an eBook'
     fill_in 'title', with: 'eBook Title'
     fill_in 'description', with: 'Description'
+    fill_in 'price', with: 1
     fill_in 'body', with: 'Long body goes here'
     click_on 'Submit eBook'
 
-    expect(current_path).to eq('/ebooks/1')
     expect(page).to have_content("eBook Title")
+    expect(page).to have_content('Description')
+    expect(page).to have_content('$1.00')
+    expect(page).to have_content('Assign categories')
   end
 end

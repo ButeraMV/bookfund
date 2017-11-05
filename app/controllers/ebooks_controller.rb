@@ -21,7 +21,7 @@ class EbooksController < ApplicationController
                       author_id: params['author_id'])
     if ebook.save
       flash[:success] = "eBook created"
-      redirect_to ebook_path(ebook)
+      redirect_to users_authors_ebook_path(ebook)
     else
       flash[:failure] = "eBook was not created"
       redirect_to users_authors_path

@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   namespace :users do
     resources :authors, only: [:index, :create]
+    namespace :authors do
+      resources :ebooks, only: [:show, :edit, :update]
+    end
   end
 end
