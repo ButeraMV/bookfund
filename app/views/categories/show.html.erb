@@ -1,8 +1,8 @@
 <h1><%= @category.name %> eBooks</h1>
 
 <% @category.ebooks.each do |ebook| %>
-  <div class="ebook">
-    <h4><%= ebook.title %></h4>
+  <div class="category-ebook">
+    <h4><%= link_to "#{ebook.title}", ebook_path(ebook) %></h4>
     <p>
       <%= ebook.description %>
     </p>

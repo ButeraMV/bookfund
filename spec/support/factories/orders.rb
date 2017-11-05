@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :order do
-    user_id { rand(1..75)}
+    user
     total_price 2.00
-    status { rand(0..3) }
+    status 0
   end
 end

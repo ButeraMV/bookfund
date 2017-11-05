@@ -1,9 +1,9 @@
 <h1>Browse our eBooks</h1>
 
 <% @ebooks.each do |ebook| %>
-  <div class="ebook">
+  <div class="ebook-index-item">
     <div class="title">
-      <%= ebook.title %>
+      <%= link_to "#{ebook.title}", ebook_path(ebook) %>
     </div>
     <div class="description">
       <%= ebook.description %>

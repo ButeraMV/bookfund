@@ -27,4 +27,23 @@ describe 'A user' do
     expect(page).to have_content("Login")
 		expect(page).to_not have_content("Logout")
   end
+
+  it 'is redirected without valid credentials' do
+    user = User.create(email: "email@email.com",
+                      password: "password",
+                      first_name: "John",
+                      last_name: "Doe",
+                      street_address: "123 Some Place",
+                      city: "Denver",
+                      zip_code: "80201",
+                      role: 0)
+
+    visit '/'
+    click_on 'Login', match: :first
+    fill_in 'user[email]', with: "#{user.email}"
+    fill_in 'user[password]', with: "#{user.password}1"
+    click_on 'Login to my account'
+
+    expect(current_path).to eq(login_path)
+  end
 end
