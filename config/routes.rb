@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :ebooks, only: [:index]
   resources :orders, only: [:index, :show, :create, :new]
   resources :users, only: [:new, :create]
+  resources :categories, only: [:index, :show]
 end
