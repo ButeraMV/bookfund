@@ -12,4 +12,13 @@ class Ebook < ApplicationRecord
   has_many :ebook_categories
   has_many :categories, through: :ebook_categories
   belongs_to :author
+
+
+  def short_description
+    if description.length > 140
+      description[0..139] + "..."
+    else
+      description
+    end
+  end
 end

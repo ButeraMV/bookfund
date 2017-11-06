@@ -1,6 +1,6 @@
 class EbooksController < ApplicationController
   def index
-    @ebooks = Ebook.paginate(:page => params[:page], :per_page => 20)
+    @ebooks = Ebook.paginate(:page => params[:page], :per_page => 8)
     @cart = Cart.new(session[:cart])
   end
 
