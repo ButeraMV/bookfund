@@ -31,12 +31,10 @@ body {
   background-color: ghostwhite;
 }
 
-.welcome-message {
-  background-color: white;
-}
-
 .welcome-message > h1 {
   font-family: 'Slabo 27px', serif;
+  font-size: 4em;
+  padding-bottom: 2%;
 }
 
 .footer {
@@ -63,4 +61,21 @@ body {
 
 .container {
   margin-top: 20px;
+}
+
+.ebook-index-item {
+  background-color: ghostwhite;
+  margin: 1em;
+  padding-top: 1em;
+  border-radius: 4%;
+  box-shadow: 5px 5px 5px grey;
+  height: 350px;
+  position: relative;
+}
+
+.index-add-cart {
+  width: 100%;
+  left: 0px;
+  bottom: 10px;
+  position: absolute;
 }

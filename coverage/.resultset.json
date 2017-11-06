@@ -273,6 +273,15 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        19,
+        0,
+        null,
+        19,
+        null,
+        null,
         null
       ],
       "/Users/mbutera/turing/3module/projects/bookfund/app/models/order.rb": [
@@ -579,6 +588,6 @@
         null
       ]
     },
-    "timestamp": 1509940511
+    "timestamp": 1509944652
   }
 }

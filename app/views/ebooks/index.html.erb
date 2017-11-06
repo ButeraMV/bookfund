@@ -1,15 +1,22 @@
 <h1>Browse our eBooks</h1>
 
-<% @ebooks.each do |ebook| %>
-  <div class="ebook-index-item">
-    <div class="title">
-      <%= link_to "#{ebook.title}", ebook_path(ebook) %>
+<% @ebooks.each_slice(4) do |slice| %>
+<div class="row">
+  <div class="col">&nbsp;</div>
+  <% slice.each do |ebook| -%>
+  <div class="ebook-index-item col-lg-2">
+      <div class="title">
+        <h5><%= link_to "#{ebook.title}", ebook_path(ebook) %></h5>
+      </div>
+      <div class="description">
+        <%= ebook.short_description %>
+      </div>
+      <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id), class: 'index-add-cart btn btn-primary' %>
     </div>
-    <div class="description">
-      <%= ebook.description %>
-    </div>
-    <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id) %>
+    <% end -%>
+    <div class="col">&nbsp;</div>
   </div>
 <% end %>
-
-<%= will_paginate @posts %>
+<div class="digg_pagination">
+  <%= will_paginate @ebooks %>
+</div>
