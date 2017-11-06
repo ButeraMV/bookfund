@@ -5,8 +5,8 @@ describe 'As a user' do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit dashboard_path
-    click_on 'Go to author dashboard'
+    visit users_authors_path
+    
     fill_in 'name', with: 'Author Lastname'
     click_on 'Create new author'
 
@@ -18,8 +18,8 @@ describe 'As a user' do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit dashboard_path
-    click_on 'Go to author dashboard'
+    visit users_authors_path
+    
     fill_in 'name', with: 'Author Lastname'
     click_on 'Create new author'
     click_on 'Post an eBook'
@@ -41,8 +41,8 @@ describe 'As a user' do
     create(:category, name: 'Adventure')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit dashboard_path
-    click_on 'Go to author dashboard'
+    visit users_authors_path
+    
     fill_in 'name', with: 'Author Lastname'
     click_on 'Create new author'
     click_on 'Post an eBook'

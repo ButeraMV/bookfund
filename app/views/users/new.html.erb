@@ -1,21 +1,37 @@
 <div class="create-form">
   <%= form_tag(@user) do %>
-    <%= label_tag :email %>
-    <%= text_field_tag 'user[email]' %>
-    <%= label_tag :password %>
-    <%= text_field_tag 'user[password]' %>
-    <%= label_tag :password_confirmation, 'Confirm Password' %>
-    <%= text_field_tag 'user[password_confirmation]' %>
-    <%= label_tag :first_name %>
-    <%= text_field_tag 'user[first_name]' %>
-    <%= label_tag :last_name %>
-    <%= text_field_tag 'user[last_name]' %>
-    <%= label_tag :street_address %>
-    <%= text_field_tag 'user[street_address]' %>
-    <%= label_tag :city %>
-    <%= text_field_tag 'user[city]' %>
-    <%= label_tag :zip_code %>
-    <%= text_field_tag 'user[zip_code]' %>
-    <%= submit_tag 'Submit' %>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= text_field_tag 'user[email]' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password %>
+      <%= text_field_tag 'user[password]' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password_confirmation, 'Confirm Password' %>
+      <%= text_field_tag 'user[password_confirmation]' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :first_name %>
+      <%= text_field_tag 'user[first_name]' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :last_name %>
+      <%= text_field_tag 'user[last_name]' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :street_address %>
+      <%= text_field_tag 'user[street_address]' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :city %>
+      <%= text_field_tag 'user[city]' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :zip_code %>
+      <%= text_field_tag 'user[zip_code]' %>
+    </div>
+      <%= submit_tag 'Submit', class: 'btn btn-success' %>
   <% end %>
 </div>

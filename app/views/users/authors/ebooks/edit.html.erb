@@ -1,11 +1,12 @@
-<h2>Add Categories</h2>
-<h4>Please select all categories that you would like to add</h4>
-
-<%= form_tag users_authors_ebook_path, method: 'put' do %>
-  <% @categories.each do |category| %>
-    <div class="form-group">
-      <%= category.name %>: <%= check_box_tag "categories[]", category.name, false, class: category.name %>
-    </div>
+<div class="update-category-text">
+  <h2>Add Categories</h2>
+  <h4>Please select all categories that you would like to add</h4>
+</div>
+<div class="update-category-boxes">
+  <%= form_tag users_authors_ebook_path, method: 'put' do %>
+      <% @categories.each do |category| %>
+        <%= category.name %> <%= check_box_tag "categories[]", category.name, false, class: category.name %><br />
+      <% end %>
+    <%= submit_tag "Update categories", class: 'btn btn-success'%>
   <% end %>
-  <%= submit_tag "Update categories" %>
-<% end %>
+</div>

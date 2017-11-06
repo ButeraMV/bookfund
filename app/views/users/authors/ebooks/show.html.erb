@@ -1,18 +1,16 @@
-<div class="container">
-  <h2>Title: <%= @ebook.title %></h2>
-  <p>Description: <%= @ebook.description %></p>
-  <p>Price: <%= number_to_currency(@ebook.price) %></p>
-  <div class="ebook-categories">
-    <% if @category_names != "" %>
-      <p>Categories:</p>
-      <ul>
-        <% @category_names.each do |name| %>
-          <li><%= name %></li>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>Categories: None yet</p>
-    <% end %>
-    <%= link_to 'Update categories', controller: "users/authors/ebooks", action: "edit" %>
-  </div>
+<h2>Title: <%= @ebook.title %></h2>
+<p>Description: <%= @ebook.description %></p>
+<p>Price: <%= number_to_currency(@ebook.price) %></p>
+<div class="ebook-categories">
+  <% if @category_names != "" %>
+    <p>Categories:</p>
+    <ul>
+      <% @category_names.each do |name| %>
+        <li><%= name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Categories: None yet</p>
+  <% end %>
+  <%= link_to 'Update categories', controller: "users/authors/ebooks", action: "edit" %>
 </div>
