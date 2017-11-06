@@ -1,5 +1,4 @@
 <h2>Welcome back, <%= @user.first_name %>.</h2>
-<%= link_to 'Go to author dashboard', users_authors_path, class: 'btn btn-primary' %>
 <h4>Purchased eBooks</h4>
 <% @ebooks.each do |ebook| %>
   <div class="ebook">

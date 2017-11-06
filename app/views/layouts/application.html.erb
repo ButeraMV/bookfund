@@ -18,7 +18,9 @@
         <%= content_tag :div, raw(msg), class: name %>
       </div>
     <% end %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <footer class="footer">
       <div class="container">
         <span class="text-muted">Copyright © <%= Time.now.year %> Michael Butera</span>
