@@ -21,4 +21,11 @@ class Ebook < ApplicationRecord
       description
     end
   end
+
+  def self.top_books
+    query = find_by_sql('select ebooks.title, count(order_ebooks.order_id) as order_count from ebooks join order_ebooks on ebooks.id = order_ebooks.ebook_id group by ebooks.title order by order_count desc limit 10')
+    query.map do |result|
+      result.title
+    end
+  end
 end

@@ -79,3 +79,8 @@ body {
   bottom: 10px;
   position: absolute;
 }
+
+.cart-table {
+  width: 60% !important;
+  margin: 0 auto;
+}

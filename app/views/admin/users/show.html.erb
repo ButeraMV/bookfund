@@ -1,0 +1,18 @@
+<h1>Admin Dashboard</h1>
+<br /><hr /><br />
+<div class="row">
+  <div class="col-md-1">&nbsp;</div>
+  <div class="col-md-4">
+    <%= line_chart Order.group_by_month(:created_at).count %>
+  </div>
+  <div class="col-md-2">&nbsp;</div>
+  <div class="col-md-4">
+    <h4>Most Popular eBooks:</h4>
+    <ol>
+      <% Ebook.top_books.each do |ebook| %>
+        <li><%= ebook %></li>
+      <% end %>
+    </ol>
+  </div>
+  <div class="col-md-1">&nbsp;</div>
+</div>
