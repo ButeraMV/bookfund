@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'A user' do
-  it 'can view their past orders' do
+  xit 'can view their past orders' do
     user = create(:user)
     ebook = create(:ebook)
 

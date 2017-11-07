@@ -29,4 +29,17 @@ class Cart
   def destroy
     @contents.clear
   end
+
+  def cart_total
+    total = 0
+    contents.each do |ebook_id, quantity|
+      ebooks_cost = Ebook.find(ebook_id).price * quantity
+      total += ebooks_cost
+    end
+    total
+  end
+
+  def cart_total_stripe
+    cart_total.to_s.tr('.', '0')
+  end
 end

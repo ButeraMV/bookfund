@@ -4,8 +4,13 @@
   <%= text_field_tag :name, 'Author name', class: "form-control mr-sm-2" %>
   <%= submit_tag "Create new author", class: 'btn' %>
 <% end %>
-<ul class="author-list">
+
+<table class="table">
   <% @authors.each do |author| %>
-    <li class="author-list-item"><%= author.name %> has <%= author.ebooks.count %> eBooks. <%= link_to 'Post an eBook.', new_users_authors_ebook_path(author: author) %></li>
+    <tr>
+      <td><%= link_to author.name, users_author_path(author.id) %></td>
+      <td><%= author.ebooks.count %> eBooks</td>
+      <td><%= link_to 'Post an eBook.', new_users_authors_ebook_path(author: author) %></td>
+    </tr>
   <% end %>
-</ul>
+</table>

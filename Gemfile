@@ -26,6 +26,7 @@ gem 'simplecov'
 gem "factory_bot_rails", "~> 4.0"
 gem "rake", '~> 12.2.1'
 gem 'bootstrap-will_paginate'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

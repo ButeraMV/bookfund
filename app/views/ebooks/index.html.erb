@@ -11,7 +11,11 @@
       <div class="description">
         <%= ebook.short_description %>
       </div>
-      <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id), class: 'index-add-cart btn btn-primary' %>
+      <% if current_user && current_user.ebooks.exists?(ebook.id) %>
+        <p class="index-add-cart btn btn-primary">Already Owned</p>
+      <% else %>
+        <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id), class: 'index-add-cart btn btn-primary' %>
+      <% end %>
     </div>
     <% end -%>
     <div class="col">&nbsp;</div>
