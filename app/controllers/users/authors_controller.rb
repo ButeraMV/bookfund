@@ -15,4 +15,8 @@ class Users::AuthorsController < ApplicationController
       redirect_to users_authors_path
     end
   end
+
+  def show
+    @author = Author.find(params[:id])
+  end
 end

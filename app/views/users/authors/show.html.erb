@@ -1,0 +1,8 @@
+<%= @author.name %>
+
+<%= @author.bio %>
+
+<% @author.ebooks.each do |ebook| %>
+  <%= ebook.title %>
+  <%= ebook.price %>
+<% end %>
