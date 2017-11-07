@@ -17,4 +17,7 @@ Rails.application.routes.draw do
       resources :ebooks, only: [:new, :create, :show, :edit, :update]
     end
   end
+  namespace :admin do
+    get "/dashboard", to: "users#show", as: "dashboard"
+  end
 end

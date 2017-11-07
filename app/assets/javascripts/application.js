@@ -13,3 +13,7 @@
 //= require rails-ujs
 //= require_tree .
 //= require jquery3
+//= require jquery
+//= require Chart.min
+//= require Chart.bundle
+//= require chartkick
