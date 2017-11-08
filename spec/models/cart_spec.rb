@@ -22,5 +22,13 @@ RSpec.describe Cart do
         expect(subject.total_count).to eq(5)
       end
     end
+
+    describe '#destroy' do
+      it 'can clear the cart' do
+        subject.destroy
+
+        expect(subject.contents).to eq({})
+      end
+    end
   end
 end
