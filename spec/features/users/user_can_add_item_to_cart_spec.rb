@@ -7,7 +7,8 @@ describe "A user" do
     visit ebooks_path
 
     click_on "Add to Cart"
-    click_on "Cart"
+
+    visit cart_path
 
     expect(current_path).to eq(cart_path)
     expect(page).to have_css('.cart-item')

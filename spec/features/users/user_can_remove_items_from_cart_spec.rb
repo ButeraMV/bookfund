@@ -7,7 +7,7 @@ describe "A user" do
     visit ebooks_path
 
     click_on "Add to Cart"
-    click_on "Cart"
+    visit cart_path
     click_on "X"
 
     expect(current_path).to eq(cart_path)

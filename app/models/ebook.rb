@@ -13,7 +13,6 @@ class Ebook < ApplicationRecord
   has_many :categories, through: :ebook_categories
   belongs_to :author
 
-
   def short_description
     if description.length > 140
       description[0..139] + "..."
@@ -27,5 +26,18 @@ class Ebook < ApplicationRecord
     query.map do |result|
       result.title
     end
+  end
+
+  def self.add_to_funding(ebook)
+    if ebook.funding != nil
+      current_funding = ebook.funding
+      ebook.update(funding: (current_funding + 10))
+    else
+      ebook.update(funding: 10)
+    end
+  end
+
+  def percent_funded
+    (self.funding.to_f / 200) * 100
   end
 end

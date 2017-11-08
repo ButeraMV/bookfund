@@ -7,12 +7,17 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :street_address, presence: true
-  validates :city, presence: true
-  validates :zip_code, presence: true
   validates :role, presence: true
 
   enum role: ["user", "admin"]
+
+  def self.from_omniauth(auth_info)
+    where(uid: auth_info[:uid]).first_or_create do |new_user|
+      new_user.uid                = auth_info['uid']
+      new_user.email              = auth_info['extra']['raw_info']['screen_name']
+      new_user.password           = auth_info['credentials']['token']
+      new_user.token              = auth_info['credentials']['token']
+      new_user.secret             = auth_info['credentials']['secret']
+    end
+  end
 end

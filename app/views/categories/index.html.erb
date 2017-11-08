@@ -1,5 +1,14 @@
-<% @categories.each do |category| %>
-  <div class="category">
-    <%= link_to "#{category.name}", category_path(category) %>
-  </div>
+<div class="categories">
+  <h1>Browse Categories</h1>
+<table class="table category-table">
+<% @categories.each_slice(4) do |slice| %>
+  <tr>
+  <% slice.each do |category| %>
+    <td class="category">
+      <%= link_to "#{category.name}", category_path(category), class: 'category-name' %>
+    </td>
+  <% end %>
+  </tr>
 <% end %>
+</table>
+</div>

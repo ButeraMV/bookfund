@@ -5,17 +5,12 @@ class Cart
     @contents = initial_contents || {}
   end
 
-  def total_count
-    contents.values.sum
+  def add_item(id)
+    contents[id.to_s] = (contents[id.to_s] || 0) + 1
   end
 
-  def cart_total
-    running_total = 0
-    contents.each do |ebook_id, quantity|
-      ebook_cost = Ebook.find(ebook_id).price * quantity
-      running_total += ebook_cost
-    end
-    running_total
+  def total_count
+    contents.values.sum
   end
 
   def order_hash

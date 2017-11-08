@@ -15,13 +15,12 @@ describe 'A visitor can create an account' do
     click_on 'Submit'
 
     expect(current_path).to eq('/dashboard')
-    expect(page).to have_content('Welcome back, First')
+    expect(page).to have_content("Welcome back, ")
   end
 
-  it 'cannot create account missing information' do
+  it 'cannot create account missing email' do
     visit '/'
     click_on 'Sign Up'
-    fill_in 'user[email]', with: 'user@user.com'
     fill_in 'user[password]', with: 'password'
     fill_in 'user[password_confirmation]', with: 'password'
     fill_in 'user[first_name]', with: 'First'

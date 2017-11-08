@@ -1,4 +1,6 @@
-<%= @author.name %>
+<%= button_to 'Back to author dashboard', users_authors_path, method: :get, class: 'btn btn-primary' %>
+
+<h1><%= @author.name %></h1>
 
 <%= @author.bio %>
 

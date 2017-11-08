@@ -8,4 +8,8 @@ class EbooksController < ApplicationController
     @ebook = Ebook.find(params['id'])
     @categories = @ebook.categories
   end
+
+  def backing
+    @ebook = Ebook.find(params['id'])
+  end
 end

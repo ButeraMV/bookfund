@@ -1,0 +1,5 @@
+<h1><%= @ebook.title %></h1>
+
+<p>This eBook is <%= @ebook.percent_funded %>% of the way to being published!</p>
+
+<%= button_to 'Back this eBook', ebooks_backing_path(@ebook), method: :get, class: 'btn btn-primary' %>

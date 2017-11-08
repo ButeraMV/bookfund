@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/dashboard', to: 'users#show', as: 'dashboard'
   get 'thanks', to: 'charges#new', as: 'thanks'
+  get '/backing/:id', to: 'ebooks#backing', as: 'ebooks_backing'
+  post '/backing/charge/', to: 'charges#ebook_backing_stripe', as: 'ebook_backing_stripe'
+  get '/auth/twitter/callback', to: 'sessions#oauth_login'
   resource :cart
   resources :charges, only: [:create]
   resources :ebooks, only: [:index, :show, :new, :create]
@@ -13,6 +16,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   namespace :users do
     resources :authors, only: [:index, :create, :show]
+    resources :ebooks, only: [:show]
     namespace :authors do
       resources :ebooks, only: [:new, :create, :show, :edit, :update]
     end

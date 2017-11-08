@@ -1,7 +1,10 @@
-<h2>Welcome back, <%= @user.first_name %>.</h2>
+<h2>Welcome back, <%= @user.email %>.</h2>
+<br /><hr />
 <h4>Purchased eBooks</h4>
+<p>Click on an eBook to see more information.</p>
+<br>
 <% @ebooks.each do |ebook| %>
   <div class="ebook">
-    <%= ebook.title %>
+    <%= link_to ebook.title, users_ebook_path(ebook) %>
   </div>
 <% end %>

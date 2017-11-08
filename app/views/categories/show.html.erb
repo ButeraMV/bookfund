@@ -1,14 +1,23 @@
 <h1><%= @category.name %> eBooks</h1>
 
-<% @category.ebooks.each do |ebook| %>
-  <div class="category-ebook">
-    <h4><%= link_to "#{ebook.title}", ebook_path(ebook) %></h4>
-    <p>
-      <%= ebook.description %>
-    </p>
-    <p>
-      <%= ebook.price %>
-    </p>
-    <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id) %>
+<% @category.ebooks.each_slice(4) do |slice| %>
+<div class="row">
+  <div class="col">&nbsp;</div>
+  <% slice.each do |ebook| -%>
+  <div class="ebook-index-item col-lg-2">
+      <div class="title">
+        <h5><%= link_to "#{ebook.title}", ebook_path(ebook) %></h5>
+      </div>
+      <div class="description">
+        <%= ebook.short_description %>
+      </div>
+      <% if current_user && current_user.ebooks.exists?(ebook.id) %>
+        <p class="index-add-cart btn btn-primary">Already Owned</p>
+      <% else %>
+        <%= button_to "Add to Cart", cart_path(ebook_id: ebook.id), class: 'index-add-cart btn btn-primary' %>
+      <% end %>
+    </div>
+    <% end -%>
+    <div class="col">&nbsp;</div>
   </div>
 <% end %>

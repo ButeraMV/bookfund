@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107205149) do
+ActiveRecord::Schema.define(version: 20171108171322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20171107205149) do
     t.float "price"
     t.boolean "published", default: false
     t.bigint "author_id"
+    t.money "funding", scale: 2
     t.index ["author_id"], name: "index_ebooks_on_author_id"
   end
 
@@ -83,6 +84,10 @@ ActiveRecord::Schema.define(version: 20171107205149) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+    t.string "secret"
   end
 
   add_foreign_key "ebook_categories", "categories"
