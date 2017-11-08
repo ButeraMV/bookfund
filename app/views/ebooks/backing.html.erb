@@ -1,0 +1,24 @@
+<% if current_user %>
+<%= form_tag ebook_backing_stripe_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Total Cost: <%= number_to_currency(10) %></span>
+    </label>
+    <%= hidden_field_tag 'ebook_id', @ebook.id %>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-name="Backing <%= @ebook.title %>"
+          data-description="Secure Payment Platform"
+          data-amount="1000"
+          data-locale="auto"></script>
+  <% end %>
+<% else %>
+  <%= link_to "Login or Register to back this book", login_path %>
+<% end %>

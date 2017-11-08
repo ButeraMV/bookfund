@@ -1,5 +1,5 @@
 <h1 class="ebook-show-title"><%= @ebook.title %></h1>
-<h3 class="ebook-show-author"><%= @ebook.author.name %></h3>
+<h4 class="ebook-show-author"><%= @ebook.author.name %></h4>
 
 <p class="ebook-show-description">
   <%= @ebook.description %>
@@ -7,4 +7,4 @@
 <p class="ebook-show-price">
   <%= number_to_currency(@ebook.price) %>
 </p>
-<%= button_to "Add to Cart", cart_path(ebook_id: @ebook.id) %>
+<%= button_to "Add to Cart", cart_path(ebook_id: @ebook.id), class: 'btn btn-primary' %>

@@ -30,6 +30,8 @@ gem 'stripe'
 gem 'groupdate'
 gem 'chartkick'
 gem 'chart-js-rails'
+gem 'pry'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -5,8 +5,11 @@
   </div>
   <div class="form-group">
     <%= label_tag :password %>
-    <%= text_field_tag 'user[password]' %>
+    <%= password_field_tag 'user[password]' %>
   </div>
     <%= submit_tag 'Login to my account', class: 'btn btn-success' %>
 <% end %>
+<p>
+  or <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+</p>
 

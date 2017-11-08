@@ -13,12 +13,12 @@ describe "User can checkout" do
 
     expect(page).to have_content "#{ebook.title} added to cart"
 
-    click_on "Cart"
+    visit cart_path
 
     expect(current_path).to eq(cart_path)
     expect(page).to have_content(ebook.title)
 
-    find(:css, ".stripe-button-el").click
+    click_on 'Pay with Card'
 
     expect(current_path).to eq(thanks)
 
