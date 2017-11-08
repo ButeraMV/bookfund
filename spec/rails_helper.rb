@@ -1,9 +1,9 @@
 require 'simplecov'
-SimpleCov.start do
-  add_filter "/spec/*"
-  add_filter "/app/channels/*"
-  add_filter "/app/mailers/*"
-  add_filter "/app/jobs/*"
+SimpleCov.start 'rails' do
+    add_filter "/spec/*"
+    add_filter "/app/channels/*"
+    add_filter "/app/mailers/*"
+    add_filter "/app/jobs/*"
 end
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
